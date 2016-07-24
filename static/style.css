@@ -1,0 +1,56 @@
+@import 'https://fonts.googleapis.com/css?family=Open+Sans';
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+button {
+  margin: 15px;
+  border-radius: 4px;
+  font-family: 'Open Sans', sans-serif;
+  border: 0;
+  padding: 15px;
+  font-size: 14px;
+  color: #FFF;
+  background-color: #D91616;
+  transition: all 0.3s cubic-bezier(0,1.5,0.5,1);
+  transform: translateZ(0);
+}
+button:hover {
+  transform: scale(1.1) translate3d( 0, 0, 0);
+}
+
+textarea {
+  font-family: 'Open Sans', sans-serif;
+  border: 0;
+  border-bottom: 2px solid #DDD;
+  margin:10px;
+  padding: 10px;
+  font-size: 14px;
+}
+
+#loader {
+  opacity: 1;
+  height: 200px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+#result {
+  opacity: 1;
+  height: auto;
+  transition: all 0.3s ease;
+}
+
+.hidden {
+  height: 0 !important;
+  opacity: 0 !important;
+}
+
+.flipped {
+  transform: scale(-1, 1);
+}

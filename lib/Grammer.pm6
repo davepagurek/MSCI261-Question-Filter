@@ -66,13 +66,14 @@ class Actions {
   }
 
   method sentence($/) {
-    my $act = $<action>.clone;
+    my $act = $<action>.clone.made;
     my $sub = $<subject>.clone;
-    if $act<object> {
-      $sub = $act<object>.clone;
-      $act = $act.clone(object => $<subject>.clone);
+    my $oldsub = $<subject>.clone;
+    if $<action><object> && (1..10).pick < 5 {
+      $sub = $<action><object>.clone;
+      $act.=subst(~$<action><object>, ~$oldsub, :g);
     }
-    $/.make: $sub.made ~ " " ~ $act.made ~
+    $/.make: $sub.made ~ " " ~ $act ~
       ($<prep> ?? " " ~ $<prep>.made ~ " " ~ $<object>.made !! "")
       ~ [".", ";", "!", "?"].pick;
   }
@@ -105,8 +106,8 @@ class Actions {
   }
 }
 
-sub parse(Str $input) is export {
-  say $input.split(/<[.;?!]>\s*/).map( -> $s {
+sub bastardize(Str $input) returns Str is export {
+  return $input.split(/<[.;?!]>\s*/).map( -> $s {
     say $s;
     next if $s eq "";
     my $typed = $s.split(" ").map(-> $w {
