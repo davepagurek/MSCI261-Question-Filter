@@ -1,6 +1,8 @@
 #MSCI261 Question filter
 
-<img src="https://github.com/davepagurek/MSCI261-Question-Filter/blob/master/img/screenshot.png?raw=true" />
+<img width="400" src="https://github.com/davepagurek/MSCI261-Question-Filter/blob/master/img/screenshot.png?raw=true" />
+
+https://www.youtube.com/watch?v=Du9llbsy30o
 
 Are your assignment questions too comprehensible? Run them through this filter and you can rest assured that no one will know what you're talking about anymore!
 
