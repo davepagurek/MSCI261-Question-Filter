@@ -83,9 +83,9 @@ class Actions {
     my $r = (1..20).pick;
     if $<a> && $r < 3 {
       $/.make: $<a> ~ "thing";
-    } elsif $r == 3 {
+    } elsif $r < 11 {
       $/.make: @names.pick;
-    } elsif $r < 5 {
+    } elsif $r < 18 {
       $/.make: "the value from Figure {(1..100).pick}";
     } else {
       #$/.make: ~($<article> ?? $<article>.made !! "") ~ ($<adjective> ?? $<adjective>.made !! "") ~ $<noun>;
